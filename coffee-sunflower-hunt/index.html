@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Happy Birthday Mom</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <audio id="bg-music" src="assets/audio/cafe-music.mp3" autoplay loop muted></audio>
+  <audio id="click-sound" src="assets/audio/click.mp3"></audio>
+
+  <div id="game-container">
+    <img
+      id="background"
+      src="assets/images/background-coffee-shop.png"
+      alt="Cartoon Coffee Shop"
+    />
+
+    <!-- Sunflowers -->
+    <div class="sunflower" data-id="1"></div>
+    <div class="sunflower" data-id="2"></div>
+    <div class="sunflower" data-id="3"></div>
+    <div class="sunflower" data-id="4"></div>
+    <div class="sunflower" data-id="5"></div>
+    <div class="sunflower" data-id="6"></div>
+    <div class="sunflower" data-id="7"></div>
+    <div class="sunflower" data-id="8"></div>
+    <div class="sunflower" data-id="9"></div>
+    <div class="sunflower" data-id="10"></div>
+
+    <!-- HUD -->
+    <div id="hud">
+      <div id="counter">Sunflowers found: <span id="found-count">0</span>/10</div>
+      <div id="hint">Click around the coffee shop to find all the hidden sunflowers!</div>
+    </div>
+
+    <!-- Overlay for final message -->
+    <div id="overlay" class="hidden">
+      <div id="message-card">
+        <h1>Happy Birthday, Mom! 🌻</h1>
+        <p>
+          You bring sunshine into my life every single day.<br />
+          I love you so much!
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Confetti library (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

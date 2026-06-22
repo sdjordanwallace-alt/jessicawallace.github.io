@@ -1,0 +1,196 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: #2b1b16;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #fff;
+}
+
+#game-container {
+  position: relative;
+  width: 1000px;
+  max-width: 95vw;
+  height: 600px;
+  max-height: 90vh;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+#background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* HUD */
+
+#hud {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(30, 20, 15, 0.85);
+  padding: 10px 20px;
+  border-radius: 999px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+}
+
+#counter {
+  font-weight: 600;
+  color: #ffd86b;
+}
+
+#hint {
+  color: #f5e1c8;
+}
+
+/* Sunflowers */
+
+.sunflower {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-image: url("assets/images/sunflower1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.sunflower:hover {
+  transform: scale(1.15);
+}
+
+/* Example positions – adjust to match your background */
+
+.sunflower[data-id="1"] {
+  top: 65%;
+  left: 20%;
+}
+
+.sunflower[data-id="2"] {
+  top: 40%;
+  left: 75%;
+}
+
+.sunflower[data-id="3"] {
+  top: 30%;
+  left: 15%;
+}
+
+.sunflower[data-id="4"] {
+  top: 55%;
+  left: 50%;
+}
+
+.sunflower[data-id="5"] {
+  top: 20%;
+  left: 60%;
+}
+
+.sunflower[data-id="6"] {
+  top: 70%;
+  left: 80%;
+}
+
+.sunflower[data-id="7"] {
+  top: 45%;
+  left: 30%;
+}
+
+.sunflower[data-id="8"] {
+  top: 15%;
+  left: 35%;
+}
+
+.sunflower[data-id="9"] {
+  top: 35%;
+  left: 90%;
+}
+
+.sunflower[data-id="10"] {
+  top: 75%;
+  left: 10%;
+}
+
+/* Overlay + message */
+
+#overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 8, 5, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#message-card {
+  background: #3b241a;
+  border-radius: 20px;
+  padding: 30px 40px;
+  text-align: center;
+  max-width: 500px;
+  border: 3px solid #ffd86b;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  position: relative;
+}
+
+#message-card::before,
+#message-card::after {
+  content: "🌻";
+  position: absolute;
+  font-size: 32px;
+  top: -20px;
+}
+
+#message-card::before {
+  left: 20px;
+}
+
+#message-card::after {
+  right: 20px;
+}
+
+#message-card h1 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #ffd86b;
+}
+
+#message-card p {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #f5e1c8;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.sunflower {
+  background-color: transparent;
+  mix-blend-mode: multiply;
+}
